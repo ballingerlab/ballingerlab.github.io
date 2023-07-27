@@ -50,7 +50,7 @@ body {
   font-weight: 200;
 }
 
-.berkeley_img{
+.cornell_logo{
 	height: 50px;
    	margin-top: 25px;
 	float:right;
@@ -63,22 +63,11 @@ body {
 	object-position: center;
 }
 
-.jumbo_labphoto{
-	background-image: url("resources/photos/2022/20220912_photo.jpeg");
-	background-size: cover;
-	height: 750px;
-	object-position: center;
-}
 
 .memberbox {
     padding: 10px 0 0 0
 }
 
-.labphoto {
-  display: block;
-  margin-left: auto;
-  max-width: 800px;
-}
 
 .memberimg {
     width: 200px;
@@ -186,12 +175,6 @@ body {
     opacity: 0.5;
 }
 
-#map {
-position: absolute;
-top: 0;
-bottom: 0;
-width: 100%;
-}
 
 pre {
     white-space: pre-wrap;
