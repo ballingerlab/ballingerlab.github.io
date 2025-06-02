@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - The Ballinger Lab @ Cornell</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header (copy from header.html) -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Ballinger Lab @ Cornell</a>
+            
+            <ul class="nav-menu">
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="people.html" class="nav-link">People</a></li>
+                <li><a href="join.html" class="nav-link">Join</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Title -->
+        <section class="page-title">
+            <h1>Research</h1>
+        </section>
+
+        <!-- Research Overview -->
+        <section class="research-overview">
+            <p>The Ballinger Lab uses tools from genetics, developmental biology, physiology, and ecology to explore how genetic and environmental factors interact to shape complex traits. Our work is grounded in natural history and spans both wild and laboratory systems that exhibit substantial variation in traits like body size, thermoregulation, and dormancy. We investigate the forces driving this trait variation across multiple levels of biological organization—from molecular and developmental mechanisms to ecological and evolutionary processes. Ultimately, our goal is to understand how evolution generates and maintains biodiversity, and to leverage that diversity to gain broader insights into how organisms develop, function, and adapt to their environments.</p>
+        </section>
+
+        <!-- Research Areas -->
+        <section class="research-areas">
+            <!-- Body Size & Shape -->
+            <div class="research-section">
+                <div class="research-image">
+                    <img src="resources/body_size.png" alt="Research on body size and shape evolution">
+                </div>
+                <div class="research-content">
+                    <h3>The Evolution of Body Size & Shape</h3>
+                    <p>Body size is one of the most fundamental traits in biology, influencing everything from metabolism and life history to ecological interactions and evolutionary dynamics. Our lab investigates the genetic, developmental, and environmental factors that govern variation in body size and shape, both within and between species. By combining approaches from quantitative genetics, developmental biology, and functional genomics, we seek to understand how natural selection shapes morphological evolution across diverse environments and life stages. Through studies of natural populations and laboratory crosses, we aim to uncover the molecular mechanisms underlying size and shape variation and to predict how organisms may respond to changing environmental conditions.</p>
+                </div>
+            </div>
+
+            <!-- Torpor & Hibernation -->
+            <div class="research-section">
+                <div class="research-image">
+                    <img src="resources/zapus.png" alt="Research on torpor and hibernation evolution">
+                </div>
+                <div class="research-content">
+                    <h3>The Evolution of Torpor & Hibernation</h3>
+                    <p>Torpor and hibernation are remarkable physiological adaptations that enable animals to survive harsh environmental conditions by dramatically reducing metabolic rate and body temperature. Our research investigates the genetic and physiological mechanisms that allow animals to enter, maintain, and exit these energy-saving states, as well as the ecological factors that drive the evolution of torpor and hibernation across diverse taxa. By combining comparative studies with experimental approaches, we aim to uncover how natural selection has shaped the diversity of dormancy strategies observed in nature today.</p>
+                </div>
+            </div>
+
+            <!-- Gene Expression -->
+            <div class="research-section">
+                <div class="research-image">
+                    <img src="resources/gene_exp.png" alt="Research on gene expression evolution">
+                </div>
+                <div class="research-content">
+                    <h3>The Evolution of Gene Expression</h3>
+                    <p>Gene expression is the crucial link between genotype and phenotype, determining when, where, and how much genes are activated during development and in response to environmental cues. Our lab uses transcriptomic, epigenomic, and genomic approaches to uncover how changes in gene expression contribute to adaptive evolution. We examine expression variation within and between closely related species to identify the molecular basis of trait differences and local adaptation. By integrating field studies with laboratory experiments, we investigate how environmental factors shape gene expression patterns and how natural selection acts on regulatory variation to drive evolutionary change.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (copy from footer.html) -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-links">
+                    <a href="https://github.com/ballingerlab" target="_blank">GitHub</a>
+                    <span class="footer-separator">|</span>
+                    <a href="https://ecologyandevolution.cornell.edu/" target="_blank">Cornell EEB</a>
+                    <span class="footer-separator">|</span>
+                    <a href="https://www.cumv.cornell.edu/" target="_blank">CUMV</a>
+                    <span class="footer-separator">|</span>
+                    <a href="internal.html">Internal</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <b>Ballinger Lab</b><br>
+                    Department of Ecology and Evolutionary Biology<br>
+                    E249 Corson Hall, 215 Tower Rd<br>
+                    Cornell University<br>
+                    Ithaca, New York 14853 (USA)<br>
+                    <b>mballinger@cornell.edu</b>
+                </div>
+            </div>
+            
+            <div class="footer-logo">
+                <img src="resources/CU_AS_logo.png" alt="Cornell University Logo">
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        // Mobile menu toggle functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

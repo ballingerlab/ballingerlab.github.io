@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer - The Ballinger Lab</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            margin-top: 80px;
+            padding: 10px 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0 15px;
+        }
+
+        .footer-links a:hover {
+            color: #b31b1b;
+        }
+
+        .footer-links a:first-child {
+            padding-left: 0;
+        }
+
+        .footer-separator {
+            color: #999;
+            font-weight: normal;
+        }
+
+        .footer-contact {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-contact b {
+            color: #666;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: flex-start;
+            align-self: flex-start;
+        }
+
+        .footer-logo img {
+            height: 200px;
+            width: 350px;
+            object-fit: contain;
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .footer-left {
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .footer-links a {
+                padding: 0 10px;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-links">
+                    <a href="https://github.com/ballingerlab" target="_blank">GitHub</a>
+                    <span class="footer-separator">|</span>
+                    <a href="https://ecologyandevolution.cornell.edu/" target="_blank">Cornell EEB</a>
+                    <span class="footer-separator">|</span>
+                    <a href="https://www.cumv.cornell.edu/" target="_blank">CUMV</a>
+                    <span class="footer-separator">|</span>
+                    <a href="internal.html">Internal</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <b>Ballinger Lab</b><br>
+                    Department of Ecology and Evolutionary Biology<br>
+                    E249 Corson Hall, 215 Tower Rd<br>
+                    Cornell University<br>
+                    Ithaca, New York 14853 (USA)<br>
+                    <b>mballinger@cornell.edu</b>
+                </div>
+            </div>
+            
+            <div class="footer-logo">
+                <img src="resources/CU_AS_logo.png" alt="Cornell University Logo">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

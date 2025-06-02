@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People - The Ballinger Lab @ Cornell</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for user icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Ballinger Lab @ Cornell</a>
+            
+            <ul class="nav-menu">
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="people.html" class="nav-link">People</a></li>
+                <li><a href="join.html" class="nav-link">Join</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Title -->
+        <section class="page-title">
+            <h1>People</h1>
+        </section>
+
+        <!-- Recruiting Message -->
+        <section class="recruiting-message">
+            <p>We are recruiting! <a href="join.html">More information about joining the lab.</a></p>
+        </section>
+
+        <!-- People Grid -->
+        <section class="people-grid">
+            <!-- Principal Investigator -->
+            <div class="person-card">
+                <div class="person-photo">
+                    <img src="resources/people/MalBallinger.jpeg" alt="Mal Ballinger">
+                </div>
+                <div class="person-info">
+                    <h3>Mal Ballinger</h3>
+                    <p class="person-title">Principal Investigator</p>
+                    <p class="person-bio">Department of Ecology and Evolutionary Biology</p>
+                    <div class="person-links">
+                        <a href="mailto:mballinger@cornell.edu"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=8P1x5BUAAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/malballinger" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Lab Member -->
+            <div class="person-card future-member">
+                <a href="join.html" class="future-member-link">
+                    <div class="person-photo placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="person-info">
+                        <h3>You?</h3>
+                        <p class="person-title">Future Lab Member</p>
+                        <p class="person-bio">Join our team and contribute to exciting research in evolutionary biology and genomics. We're looking for curious and motivated individuals at all levels.</p>
+                        <div class="join-button">
+                            <span>Learn More</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-links">
+                    <a href="https://github.com/ballingerlab" target="_blank">GitHub</a>
+                    <span class="footer-separator">|</span>
+                    <a href="https://ecologyandevolution.cornell.edu/" target="_blank">Cornell EEB</a>
+                    <span class="footer-separator">|</span>
+                    <a href="https://www.cumv.cornell.edu/" target="_blank">CUMV</a>
+                    <span class="footer-separator">|</span>
+                    <a href="internal.html">Internal</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <b>Ballinger Lab</b><br>
+                    Department of Ecology and Evolutionary Biology<br>
+                    E249 Corson Hall, 215 Tower Rd<br>
+                    Cornell University<br>
+                    Ithaca, New York 14853 (USA)<br>
+                    <b>mballinger@cornell.edu</b>
+                </div>
+            </div>
+            
+            <div class="footer-logo">
+                <img src="resources/CU_AS_logo.png" alt="Cornell University Logo">
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

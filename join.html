@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - The Ballinger Lab @ Cornell</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Ballinger Lab @ Cornell</a>
+            
+            <ul class="nav-menu">
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="people.html" class="nav-link">People</a></li>
+                <li><a href="join.html" class="nav-link">Join</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Title -->
+        <section class="page-title">
+            <h1>Join the Lab!</h1>
+        </section>
+
+        <!-- Join Content -->
+        <section class="join-content">
+            <div class="join-intro">
+                <p>We are currently recruiting postdocs, graduate students, and undergraduates who are curious and excited about organismal biology, evolution, and/or genomics!</p>
+            </div>
+
+            <div class="position-sections">
+                <div class="position-section">
+                    <h3>Postdoc Candidates</h3>
+                    <p>If you are interested in joining the lab as a postdoctoral scholar, please <a href="mailto:mballinger@cornell.edu">email Mal</a> with your CV and a brief description of your research experience and interests. It's also helpful if you can provide a few references (e.g., advisor or thesis committee members).</p>
+                </div>
+
+                <div class="position-section">
+                    <h3>Graduate Students</h3>
+                    <p>If you are considering pursuing a PhD in our lab in the Department of Ecology & Evolutionary Biology, please <a href="mailto:mballinger@cornell.edu">email Mal</a> with your CV and a brief overview of your scientific interests. Interested PhD students in other Cornell departments should also feel free to get in touch.</p>
+                </div>
+
+                <div class="position-section">
+                    <h3>Undergraduate Students</h3>
+                    <p>We are always looking for curious and motivated undergraduates to join the lab. <a href="mailto:mballinger@cornell.edu">Email Mal</a> with your CV/resume and a brief description of your interests and why you are interested in our lab.</p>
+                </div>
+            </div>
+
+            <div class="additional-info">
+                <p>We believe science works best when it's open, collaborative, fun, and driven by curiosity. Just as we value diversity in our study systems, we are committed to building a welcoming and supportive community where everyone has the opportunity to grow and succeed.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-links">
+                    <a href="https://github.com/ballingerlab" target="_blank">GitHub</a>
+                    <span class="footer-separator">|</span>
+                    <a href="https://ecologyandevolution.cornell.edu/" target="_blank">Cornell EEB</a>
+                    <span class="footer-separator">|</span>
+                    <a href="https://www.cumv.cornell.edu/" target="_blank">CUMV</a>
+                    <span class="footer-separator">|</span>
+                    <a href="internal.html">Internal</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <b>Ballinger Lab</b><br>
+                    Department of Ecology and Evolutionary Biology<br>
+                    E249 Corson Hall, 215 Tower Rd<br>
+                    Cornell University<br>
+                    Ithaca, New York 14853 (USA)<br>
+                    <b>mballinger@cornell.edu</b>
+                </div>
+            </div>
+            
+            <div class="footer-logo">
+                <img src="resources/CU_AS_logo.png" alt="Cornell University Logo">
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

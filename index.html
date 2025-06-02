@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballinger Lab @ Cornell</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header (copy from header.html) -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Ballinger Lab @ Cornell</a>
+            
+            <ul class="nav-menu">
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="people.html" class="nav-link">People</a></li>
+                <li><a href="join.html" class="nav-link">Join</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Image Section -->
+        <section class="hero-image">
+            <!-- Image will be displayed as CSS background -->
+        </section>
+
+        <!-- Main Content -->
+        <section class="main-content">
+            <p>Welcome to the Ballinger Lab, based in the <a href="https://ecologyandevolution.cornell.edu/">Department of Ecology and Evolutionary Biology</a> at Cornell University! We study the evolution of complex traits—such as morphology, physiology, and behavior—to understand how and why populations adapt to their local environments. Check out the rest of the website to learn more about who we are and what we do!</p>
+
+            <p>Interested in joining the Ballinger Lab? <a href="join.html">We're recruiting!</a> We believe science works best when it's open, collaborative, fun, and driven by curiosity. Just as we value diversity in our study systems, we are committed to building a welcoming and supportive community where everyone has the opportunity to grow and succeed.</p>
+        </section>
+    </main>
+
+    <!-- Footer (copy from footer.html) -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-links">
+                    <a href="https://github.com/ballingerlab" target="_blank">GitHub</a>
+                    <span class="footer-separator">|</span>
+                    <a href="https://ecologyandevolution.cornell.edu/" target="_blank">Cornell EEB</a>
+                    <span class="footer-separator">|</span>
+                    <a href="https://www.cumv.cornell.edu/" target="_blank">CUMV</a>
+                    <span class="footer-separator">|</span>
+                    <a href="internal.html">Internal</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <b>Ballinger Lab</b><br>
+                    Department of Ecology and Evolutionary Biology<br>
+                    E249 Corson Hall, 215 Tower Rd<br>
+                    Cornell University<br>
+                    Ithaca, New York 14853 (USA)<br>
+                    <b>mballinger@cornell.edu</b>
+                </div>
+            </div>
+            
+            <div class="footer-logo">
+                <img src="resources/CU_AS_logo.png" alt="Cornell University Logo">
+            </div>
+        </div>
+    </footer>    
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        // Mobile menu toggle functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
